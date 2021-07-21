@@ -1,6 +1,7 @@
 {{title}}
 
-<app-first [message]= " message " ></app-first>
-<app-second></app-second>
-<app-third (thirdEvent)="appEvent($event)"></app-third>
-<app-fourth></app-fourth>
+<!-- <app-first [message]= " message " ></app-first> -->
+<app-first (firstEvent)="appEvent($event)" ></app-first>
+<app-second  [secondMessage]= " appMessage" ></app-second>
+<!-- <app-third (thirdEvent)="appEvent($event)"></app-third>
+<app-fourth></app-fourth> -->

@@ -8,9 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   // title = 'judyfrontend';
   title = 'This is my first angular project!';
-  message = "This is for input parameter";
+  appMessage = "";
 
   appEvent(event: any){
-     alert(event);
+    this.appMessage = event;
+    //  alert(event);
   }
 }

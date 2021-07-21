@@ -12,7 +12,7 @@ export class FirstComponent implements OnInit {
   ngOnInit(): void {
   }
   onClick(){
-    this.firstEvent.emit('new message');
+    this.firstEvent.emit('New message!');
     // alert('test');
   }
 }

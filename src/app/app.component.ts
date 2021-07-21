@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'judyfrontend';
+  // title = 'judyfrontend';
+  title = 'This is my first angular project!';
+  message = "This is for input parameter";
+
+  appEvent(event: any){
+     alert(event);
+  }
 }

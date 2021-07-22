@@ -1,7 +1,36 @@
 {{title}}
 
+<p>Count:{{count}}</p>
+
+ <button (click) = "addCount()">Add Count</button> <br>
+ <button (click) = "subCount()">Sub Count</button> 
+
+
+<app-second *ngIf="count > 5 "></app-second>
+
+
+
 <!-- <app-first [message]= " message " ></app-first> -->
-<app-first (firstEvent)="appEvent($event)" ></app-first>
-<app-second  [secondMessage]= " appMessage" ></app-second>
+<!-- <app-first (firstEvent)="appEvent($event)" ></app-first>
+<app-second  [secondMessage]= " appMessage" ></app-second> -->
 <!-- <app-third (thirdEvent)="appEvent($event)"></app-third>
 <app-fourth></app-fourth> -->
+
+ 
+<!-- <div *ngFor="let message of appMessageArray">
+    <app-first [firstMessage]="message"></app-first>
+</div>
+<div *ngIf="showComponent">
+    <app-second></app-second>
+</div>
+<button (click)="showHide()">Show</button>  -->
+  
+<!-- ACTIVITY 5 -->
+
+<!-- <h1>Device Details View</h1>
+
+<div *ngFor="let device of devices">
+    <app-device-details [deviceDetail]="device"></app-device-details>
+</div> -->
+
+<router-outlet></router-outlet>

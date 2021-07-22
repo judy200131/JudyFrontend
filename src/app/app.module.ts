@@ -4,11 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
-import { SecondComponent } from './second/second.component';
+import { SecondComponent }from './second/second.component';
 import { ThirdComponent } from './third/third.component';
 import { FourthComponent } from './fourth/fourth.component';
-
-
+import { DeviceDetailsComponent } from './device-details/device-details.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,8 @@ import { FourthComponent } from './fourth/fourth.component';
     FirstComponent,
     SecondComponent,
     ThirdComponent,
-    FourthComponent
+    FourthComponent,
+    DeviceDetailsComponent
   ],
   imports: [
     BrowserModule,

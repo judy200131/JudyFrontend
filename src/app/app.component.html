@@ -1,12 +1,25 @@
 {{title}}
 
-<p>Count:{{count}}</p>
+<!-- FORM  EXAMPE -->
+
+<!-- <app-template-form></app-template-form> -->
+
+
+
+
+ <!-- ACTIVITY 4 -->
+
+
+<!-- <p>Count:{{count}}</p>
 
  <button (click) = "addCount()">Add Count</button> <br>
- <button (click) = "subCount()">Sub Count</button> 
+ <button (click) = "subCount()">Sub Count</button>  -->
 
-
-<app-second *ngIf="count > 5 "></app-second>
+<!-- <div *ngIf="count > 5 ">
+    <app-second></app-second>
+</div> -->
+<!-- PWEDE RA ING ANI -->
+<!-- <app-second *ngIf="count > 5 "></app-second> -->
 
 
 
@@ -24,13 +37,21 @@
     <app-second></app-second>
 </div>
 <button (click)="showHide()">Show</button>  -->
-  
+
+
+
 <!-- ACTIVITY 5 -->
 
-<!-- <h1>Device Details View</h1>
+<h1>Device Details View</h1>
 
 <div *ngFor="let device of devices">
     <app-device-details [deviceDetail]="device"></app-device-details>
-</div> -->
+    
+</div>
+
+<div >
+    <app-template-form (deviceDetail)=addDevice($event)></app-template-form>
+
+</div>
 
 <router-outlet></router-outlet>

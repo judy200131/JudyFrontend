@@ -1,6 +1,5 @@
 import { Component,  EventEmitter, Output } from '@angular/core';
 import { Device } from './models';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,7 +11,6 @@ export class AppComponent {
 // ACTIVITY 5 and 6 TEMPLATE-DRIVEN FORM
   showUpdate = false;
   selectedDevice ;
-
   devices : Device []= [
     {
       id:0,
@@ -39,8 +37,7 @@ export class AppComponent {
       serial:"4CE0460D0G"
     },
   ]
-  
-
+  // REACTIVE-FORM-ACTIVITY 7
   updateDevice(event,id){
     this.showUpdate = event;
     this.selectedDevice = this.devices.find(device=> device.id === id);
@@ -56,11 +53,10 @@ export class AppComponent {
         device.year = event.value.year;
         device.serial = event.value.serial;
        }
-
     });
-
     this.showUpdate = false;
   }
+}
   // addDevice(device: Device){
   //   console.log(device);
   //   this.devices.push(device);
@@ -103,4 +99,4 @@ export class AppComponent {
 //   }
 
 
-}
+

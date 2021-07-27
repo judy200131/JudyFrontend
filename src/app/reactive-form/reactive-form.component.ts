@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Device } from './../models';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -31,7 +33,7 @@ export class ReactiveFormComponent implements OnInit {
     year: new FormControl(''),
     serial: new FormControl(''),
   })
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.updateForm = new FormGroup({
@@ -43,14 +45,20 @@ export class ReactiveFormComponent implements OnInit {
     serial: new FormControl(this.device.serial),
     });
   }
+
+  updateDevice(){
+    this.router.navigate(['/list']);
+  }
+}
 //  updateDevice(showUpdate){
 //   console.log(this.updateForm.value);
 //   // this.updateForm;
 //   // console.log(form.value);
 // }
 
-updateDevice(){
-  this.update.emit(this.updateForm);
-}
+// updateDevice(){
+//   this.update.emit(this.updateForm);
+// }
 
-}
+
+

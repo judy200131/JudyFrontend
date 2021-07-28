@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'list', pathMatch: 'full'},
   { path: 'list', component: DeviceListComponent, pathMatch: 'full'},
   { path: 'add', component: TemplateFormComponent, pathMatch: 'full'},
-  {path: 'update', component: ReactiveFormComponent, pathMatch: 'full'}
+  {path: 'update/:id', component: ReactiveFormComponent, pathMatch: 'full'}
 ];
 
 @NgModule({

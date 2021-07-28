@@ -2,7 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Device } from './../models';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DeviceService } from '../device.service';
 
 
 @Component({
@@ -11,20 +12,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./reactive-form.component.css']
 })
 export class ReactiveFormComponent implements OnInit {
-
-  id:number;
-
-  @Input() device: Device = {
-      id:null,
-      name:'',
-      brand:'',
-      model:'',
-      year:null,
-      serial:'',
-  };
-
-  @Output() update:EventEmitter<any>= new EventEmitter();
-
   updateForm = new FormGroup({
     id:new FormControl(''),
     name: new FormControl(''),
@@ -32,10 +19,19 @@ export class ReactiveFormComponent implements OnInit {
     model: new FormControl(''),
     year: new FormControl(''),
     serial: new FormControl(''),
-  })
-  constructor(private router: Router) { }
+  });
+
+  device : Device ;
+
+  @Output() update:EventEmitter<any>= new EventEmitter();
+  constructor(
+    private router: Router,
+    private deviceService: DeviceService,
+    private route:ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
+      this.device = this.deviceService.getDevice(parseInt(this.route.snapshot.paramMap.get('id')))
     this.updateForm = new FormGroup({
     id:new FormControl(this.device.id),
     name: new FormControl(this.device.name),
@@ -44,12 +40,25 @@ export class ReactiveFormComponent implements OnInit {
     year: new FormControl(this.device.year),
     serial: new FormControl(this.device.serial),
     });
-  }
+
+ }
 
   updateDevice(){
+    this.deviceService.updateDevice(this.updateForm.value);
     this.router.navigate(['/list']);
   }
 }
+
+// @Input() device: Device = {
+  //     id:null,
+  //     name:'',
+  //     brand:'',
+  //     model:'',
+  //     year:null,
+  //     serial:'',
+  // };
+
+  
 //  updateDevice(showUpdate){
 //   console.log(this.updateForm.value);
 //   // this.updateForm;

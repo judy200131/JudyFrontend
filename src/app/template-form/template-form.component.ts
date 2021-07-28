@@ -3,6 +3,7 @@ import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { DeviceService } from '../device.service';
 
 
 @Component({
@@ -12,14 +13,20 @@ import { Router } from '@angular/router';
 })
 export class TemplateFormComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private deviceService: DeviceService
+    ) { }
 
   ngOnInit(): void {
   }
 
   addDevice(form: NgForm){
+    form.value.id = this.deviceService.getId()
+    this.deviceService.addDevice(form.value);
     this.router.navigate(['/list']);
   }
+ 
 }
 
 

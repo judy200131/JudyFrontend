@@ -6,6 +6,7 @@
 <p>Model: {{deviceDetail.model}}</p>
 <p>Year: {{deviceDetail.year}}</p>
 <p>Serial: {{deviceDetail.serial}}</p> -->
+
 <div class="card" style="width: 15rem;margin-left:30px;margin-bottom:10px">
     <div class="card-body">
         <h3>{{deviceDetail.name}}</h3>
@@ -13,6 +14,6 @@
         <p>Model: {{deviceDetail.model}}</p>
         <p>Year: {{deviceDetail.year}}</p>
         <p>Serial: {{deviceDetail.serial}}</p>
-        <button  class="btn btn-primary" style="margin-left: 50px;" (click)= "updateDevice()"> Update </button>
+        <button class="btn btn-primary" style="margin-left: 50px;" (click)="updateDevice(deviceDetail.id)"> Update </button>
     </div>
-  </div>
+</div>

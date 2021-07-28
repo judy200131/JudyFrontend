@@ -10,33 +10,33 @@ import { Device } from './../models';
   styleUrls: ['./device-list.component.css']
 })
 export class DeviceListComponent implements OnInit {
-  devices : Device []
-  // devices : Device []= [
-  //   {
-  //     id:0,
-  //     name: "Device01",
-  //     brand: "Dell",
-  //     model: "Latitude 120",
-  //     year:"2021",
-  //     serial:"8W53222"
-  //   },
-  //   {
-  //     id:1,
-  //     name: "Device02",
-  //     brand: "HP",
-  //     model: "Pavillion",
-  //     year:"2021",
-  //     serial:"4CE0460D0G"
-  //   },
-  //   // {
-  //   //   id:2,
-  //   //   name: "Device02",
-  //   //   brand: "HP",
-  //   //   model: "Pavillion",
-  //   //   year:"2021",
-  //   //   serial:"4CE0460D0G"
-  //   // },
-  // ]
+  // devices : Device []
+  devices : Device []= [
+    {
+      id:0,
+      name: "Device01",
+      brand: "Dell",
+      model: "Latitude 120",
+      year:"2021",
+      serial:"8W53222"
+    },
+    {
+      id:1,
+      name: "Device02",
+      brand: "HP",
+      model: "Pavillion",
+      year:"2021",
+      serial:"4CE0460D0G"
+    },
+    // {
+    //   id:2,
+    //   name: "Device02",
+    //   brand: "HP",
+    //   model: "Pavillion",
+    //   year:"2021",
+    //   serial:"4CE0460D0G"
+    // },
+  ]
   constructor(
     private router: Router,
     private deviceService: DeviceService
